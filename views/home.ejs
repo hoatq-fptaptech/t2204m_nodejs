@@ -11,5 +11,11 @@
     <h1>Home page</h1>
     <h2>Demo</h2>
     <p>XIn chao</p>
+    <h2>Danh sách sản phẩm:</h2>
+    <ul>
+        <% for(let i=0;i<products.length;i++){ %>
+        <li><%= products[i].name %></li>
+        <% } %>
+    </ul>
 </body>
 </html>
