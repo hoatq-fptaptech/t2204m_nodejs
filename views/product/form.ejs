@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("../head.ejs") %>
+</head>
+<body>
+    <%- include("../nav.ejs") %>
+    <section>
+        <div class="container">
+            <form action="/products/create" method="post">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Name</label>
+                  <input type="text" name="name" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Price</label>
+                    <input type="number" name="price" class="form-control" aria-describedby="emailHelp">
+                  </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Qty</label>
+                    <input type="number" name="qty" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Brand</label>
+                    <input type="text" name="brand" class="form-control" aria-describedby="emailHelp">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </section>
+</body>
+</html>

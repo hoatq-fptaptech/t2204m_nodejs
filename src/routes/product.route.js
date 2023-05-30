@@ -13,10 +13,17 @@ router.get("/",(req,res)=>{
         })
 });
 router.get("/create",(req,res)=>{
-
+    res.render("product/form");
 });
 router.post("/create",(req,res)=>{
-
+    const data = req.body;
+    const product = new Product(data);
+    product.save()
+    .then(rs=>{
+        res.redirect("/products/");
+    }).catch(err=>{
+        res.send(err);
+    })
 });
 
 module.exports = router;
