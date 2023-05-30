@@ -28,3 +28,6 @@ app.get("/shop",function(req,res){
 app.get("/detail",function(req,res){
     res.send("detail");
 })
+// CRUD products
+const productRoutes = require("./src/routes/product.route");
+app.use("/products",productRoutes);
