@@ -39,3 +39,5 @@ exports.loginUser = async (req,res)=>{
         res.send(error);
     }
 }
+
+// change password
