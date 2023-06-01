@@ -33,3 +33,6 @@ app.get("/detail",function(req,res){
 // CRUD products
 const productRoutes = require("./src/routes/product.route");
 app.use("/products",productRoutes);
+//AUTH
+const authRoutes = require("./src/routes/auth.route");
+app.use("/auth",authRoutes);
