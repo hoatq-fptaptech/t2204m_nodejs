@@ -2,6 +2,8 @@ const { use } = require("../routes/auth.route");
 const User = require("./../models/user");
 const bcrypt = require("bcryptjs");
 exports.register = (req,res)=>{
+    const auth = req.session.auth;
+    if(auth) return res.send(`Bạn đã login bằng email ${auth.email}`);
     res.render("auth/register");
 }
 exports.create_user = async (req,res)=>{
@@ -18,6 +20,10 @@ exports.create_user = async (req,res)=>{
             password: hashPwd
         })
         await user.save();
+        req.session.auth = {
+            name: user.name,
+            email:user.email,
+        }
         res.send("DONE");
     } catch (error) {
         res.send(error);

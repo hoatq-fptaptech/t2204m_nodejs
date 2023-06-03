@@ -11,6 +11,21 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+// session
+const session = require("express-session");
+app.use(
+    session({
+        resave: true,
+        saveUninitialized:true,
+        secret: "t2203e",
+        cookie: {
+            maxAge: 3600000, // miliseconds
+           // secure:true
+        }
+    })
+);
+
+
 app.get("/",function(req,res){
     const Product = require("./src/models/product");
     Product.find({})
