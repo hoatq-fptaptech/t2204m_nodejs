@@ -36,6 +36,7 @@ exports.create_user = async (req,res)=>{
         req.session.auth = {
             name: user.name,
             email:user.email,
+            permissions: user.permissions
         }
         res.send("DONE");
     } catch (error) {
