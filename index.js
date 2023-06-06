@@ -1,4 +1,4 @@
-const e = require("express");
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const database = require("./src/database");
@@ -17,10 +17,10 @@ app.use(
     session({
         resave: true,
         saveUninitialized:true,
-        secret: "t2203e",
+        secret: process.env.SESSION_SECRET,
         cookie: {
             maxAge: 3600000, // miliseconds
-           // secure:true
+            secure: false
         }
     })
 );
