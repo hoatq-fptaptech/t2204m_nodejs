@@ -7,11 +7,15 @@
     <%- include("../nav.ejs") %>
     <section>
         <div class="container">
-            <form action="/products/create" method="post">
+            <form action="/products/create" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Name</label>
                   <input type="text" name="name" class="form-control" aria-describedby="emailHelp">
                 </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Thumbnail</label>
+                    <input type="file" name="thumbnail" class="form-control" aria-describedby="emailHelp">
+                  </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Price</label>
                     <input type="number" name="price" class="form-control" aria-describedby="emailHelp">

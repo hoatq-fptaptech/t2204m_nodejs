@@ -20,7 +20,9 @@
                 <tbody>
                     <% products.forEach(e=>{ %>
                         <tr>
-                            <td><%= e._id %></td>
+                            <td>
+                                <img width="80" src="data:<%= e.thumbnail.contentType %>;base64,<%= e.thumbnail.data %>" />
+                            </td>
                             <td><%= e.name %></td>
                             <td><%= e.price %></td>
                             <td><%= e.qty %></td>
